@@ -1,0 +1,699 @@
+:root {
+  --coffee-dark: #4d3d30;
+  --coffee-medium: #7a5c4d;
+  --coffee-light: #b39b8a;
+  --bun-light: #f5e8c1;
+  --bun-creme: #fffaf0;
+  --text-dark: #333333;
+  --text-light: #fefefe;
+  --accent-brown: #967969;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+}
+
+body {
+  background-color: var(--bun-creme);
+  background-image: url('https://www.transparenttextures.com/patterns/clean-gray-paper.png');
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+header {
+  position: relative;
+  z-index: 1000;
+}
+
+.main-nav {
+  position: sticky;
+  top: 0;
+  background-color: var(--coffee-dark);
+  color: var(--text-light);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.header-logo {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--bun-light);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--bun-light);
+  font-weight: 600;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--accent-brown);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--bun-light);
+  margin: 4px 0;
+  transition: transform 0.3s;
+}
+
+.about-section {
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+}
+
+.about-content {
+  max-width: 900px;
+  width: 100%;
+}
+
+.intro-card {
+  background-color: var(--bun-creme);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 2px dashed var(--coffee-medium);
+  text-align: center;
+}
+
+.intro-card h1 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 3rem;
+  color: var(--coffee-dark);
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-style: italic;
+  color: var(--coffee-light);
+  margin-bottom: 1.5rem;
+}
+
+.image-container {
+  margin: 2rem 0;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 4px solid var(--bun-light);
+}
+
+.about-text {
+  text-align: justify;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+}
+
+.cta-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--coffee-medium);
+  color: var(--bun-creme);
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+  background-color: var(--accent-brown);
+  transform: translateY(-3px);
+}
+
+footer {
+  background-color: var(--coffee-dark);
+  color: var(--bun-light);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  background-color: var(--coffee-light);
+  color: var(--text-light);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.3s;
+}
+
+#scrollTopBtn:hover {
+  background-color: var(--accent-brown);
+  transform: translateY(-3px);
+}
+
+.merch-section {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.merch-card {
+  background-color: var(--bun-creme);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--coffee-light);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.merch-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.merch-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.product-name {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.4rem;
+  color: var(--coffee-dark);
+  margin-bottom: 0.5rem;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--coffee-medium);
+  margin-bottom: 1rem;
+}
+
+.add-to-cart-btn {
+  background-color: var(--accent-brown);
+  color: var(--bun-creme);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+  width: 100%;
+  margin-top: auto;
+}
+
+.add-to-cart-btn:hover {
+  background-color: var(--coffee-medium);
+}
+
+.treats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.treat-button {
+  display: inline-block;
+  background-color: var(--bun-light);
+  color: var(--coffee-dark);
+  padding: 1rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background-color 0.3s, transform 0.3s;
+  border: 2px solid var(--coffee-medium);
+  text-align: center;
+}
+
+.treat-button:hover {
+  background-color: var(--coffee-light);
+  transform: translateY(-3px);
+  color: var(--text-light);
+}
+
+.payment-info {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.payment-info h2 {
+  font-family: 'Roboto Slab', serif;
+  color: var(--coffee-dark);
+  margin-bottom: 1rem;
+}
+
+.payment-info p {
+  color: var(--text-dark);
+}
+
+.payment-methods {
+  display: flex;
+  flex-direction: row; /* Ezt a sort kell módosítanod */
+  flex-wrap: wrap; /* Add hozzá ezt is, hogy kisebb képernyőn sortörés legyen */
+  justify-content: center; /* Ez középre igazítja az elemeket */
+  gap: 1.5rem; /* Egy kis térköz az elemek között */
+  margin-top: 1.5rem;
+}
+
+.payment-card {
+  background-color: var(--bun-light);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px dashed var(--coffee-medium);
+  text-align: left;
+  max-width: fit-content;
+}
+
+.payment-card h3 {
+  color: var(--coffee-dark);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.revolut-link {
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.revolut-link:hover {
+  background-color: #333;
+}
+
+.revolut-link i {
+  margin-right: 0.5rem;
+}
+
+.gallery-section {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-album-container {
+  max-width: 1200px;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.gallery-album {
+  margin-bottom: 3rem;
+}
+
+.album-title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 2rem;
+  color: var(--coffee-dark);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.gallery-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+
+.gallery-container {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: none;
+  -webkit-overflow-scrolling: touch;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.gallery-container::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-item {
+  flex-shrink: 0;
+  width: 400px;
+  height: 250px;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  background-color: var(--bun-creme);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--coffee-light);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.gallery-item.active {
+  filter: none !important;
+  transform: scale(1) !important;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.left-arrow {
+  left: 0;
+}
+
+.right-arrow {
+  right: 0;
+}
+
+/* --- Lightbox Stílusok --- */
+#lightbox-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#lightbox-overlay.visible {
+  display: flex;
+  opacity: 1;
+}
+
+#lightbox-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+#lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#lightbox-close:hover {
+  color: var(--accent-brown);
+}
+
+.lightbox-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 2001;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Alapértelmezett pozíciók a szélesebb képernyőkhöz */
+  left: -80px; /* Kezdő pozíció */
+  right: -80px; /* Kezdő pozíció */
+}
+
+.lightbox-nav-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* A specifikus nyilak felülírják az alapértelmezett pozíciót */
+#lightbox-prev {
+  left: 10px; /* Ide került a módosítás: a bal nyíl alapértelmezett pozíciója */
+  right: auto; /* A jobb oldali pozíció kikapcsolása */
+}
+
+#lightbox-next {
+  right: 10px; /* Ide került a módosítás: a jobb nyíl alapértelmezett pozíciója */
+  left: auto; /* A bal oldali pozíció kikapcsolása */
+}
+
+
+/* --- Reszponzivitás --- */
+@media (max-width: 1024px) {
+  .gallery-item {
+    width: 300px;
+  }
+  /* Ezek a lightbox nyilak alapértelmezett értékei maradnak, 
+     de a lentebbi mobilnézetben felülíródnak. */
+  #lightbox-prev { left: 10px; }
+  #lightbox-next { right: 10px; }
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .nav-header {
+    flex-direction: row;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    align-items: center;
+  }
+
+  .nav-menu.open {
+    max-height: 300px;
+  }
+
+  .nav-menu li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .nav-menu li:last-child {
+    border-bottom: none;
+  }
+
+  .intro-card {
+    padding: 1.5rem;
+  }
+  
+  .intro-card h1 {
+    font-size: 2.5rem;
+  }
+  
+  .tagline {
+    font-size: 0.9rem;
+  }
+
+  .about-text {
+    text-align: left;
+  }
+  
+  .about-section {
+    padding-top: 5rem;
+  }
+
+  .album-title {
+    font-size: 1.8rem;
+  }
+
+  .gallery-wrapper {
+    padding: 0 20px;
+  }
+
+  .gallery-container {
+    gap: 1rem;
+  }
+
+  .gallery-item {
+    width: 250px;
+    height: 180px;
+    max-width: none;
+  }
+
+  .nav-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .lightbox-nav-arrow {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    /* A médialekérdezésen belül biztosítjuk a helyes pozíciókat */
+    left: 10px; /* Alapértelmezett balra pozíció */
+    right: auto; /* Kikapcsoljuk az alapértelmezett jobbra pozíciót */
+  }
+
+  #lightbox-prev {
+    left: 10px; /* Bal nyíl pozíciója mobilnézetben */
+    right: auto;
+  }
+
+  #lightbox-next {
+    right: 10px; /* Jobb nyíl pozíciója mobilnézetben */
+    left: auto;
+  }
+
+  #lightbox-close {
+    font-size: 2rem;
+    top: 10px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .treat-button {
+    width: 100%;
+  }
+  .gallery-item {
+    width: 200px;
+  }
+}
